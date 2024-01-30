@@ -1,0 +1,42 @@
+User
+-
+UserID int PK
+Username varchar(50) NOT NULL
+Password varchar(255) NOT NULL
+Email varchar(100) NOT NULL
+RoleID int FK > Role.RoleID
+
+Role
+-
+RoleID int PK
+RoleName varchar(50) NOT NULL
+
+Content
+-
+ContentID int PK
+Title varchar(255) NOT NULL
+Body text
+CreateDate datetime NOT NULL
+UpdateDate datetime NOT NULL
+UserID int FK > User.UserID
+CategoryID int FK > Category.CategoryID
+
+Category
+-
+CategoryID int PK
+CategoryName varchar(100) NOT NULL
+
+Media
+-
+MediaID int PK
+ContentID int FK > Content.ContentID
+FilePath varchar(255) NOT NULL
+FileType varchar(50) NOT NULL
+
+RefreshToken
+-
+TokenID int PK
+UserID int FK > User.UserID
+Token varchar(255) NOT NULL
+ExpiryDate datetime NOT NULL
+POSITION({"Customer":{"x":197,"y":2,"w":230},"Order":{"x":413,"y":2,"w":230},"OrderLine":{"x":636,"y":115,"w":230},"User":{"x":857,"y":-207,"w":230},"Role":{"x":485,"y":-79,"w":230},"Content":{"x":484,"y":43,"w":230},"ContentType":{"x":156,"y":235,"w":230},"Category":{"x":822,"y":235,"w":230},"Comment":{"x":1104,"y":11,"w":230},"Media":{"x":154,"y":11,"w":230},"Template":{"x":1113,"y":-203,"w":230},"RefreshToken":{"x":484,"y":-348,"w":230}})
